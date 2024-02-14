@@ -29,19 +29,34 @@ def user_interaction():
                 print("Сначала вы должны выполнить поиск вакансий.")
 
         elif choice == "3":
-            remove_vacancies(vacancies)
+            if len(JSONSaver().load_from_file()) > 0:
+                remove_vacancies(vacancies)
+            else:
+                print("Файл с вакансиями пуст.")
 
-        # elif choice == "4":
-        #     get_vac_by_salary(vacancies)
-        #
-        # elif choice == "5":
-        #     get_vac_by_city(vacancies)
-        #
-        # elif choice == "6":
-        #     get_top_vac(vacancies)
-        #
-        # elif choice == "7":
-        #     get_all_vacancies(vacancies)
+        elif choice == "4":
+            if len(JSONSaver().load_from_file()) > 0:
+                get_vac_by_salary(vacancies)
+            else:
+                print("Файл с вакансиями пуст.")
+
+        elif choice == "5":
+            if len(JSONSaver().load_from_file()) > 0:
+                get_vac_by_city(vacancies)
+            else:
+                print("Файл с вакансиями пуст.")
+
+        elif choice == "6":
+            if len(JSONSaver().load_from_file()) > 0:
+                get_top_vac(vacancies)
+            else:
+                print("Файл с вакансиями пуст.")
+
+        elif choice == "7":
+            if len(JSONSaver().load_from_file()) > 0:
+                get_all_vacancies(vacancies)
+            else:
+                print("Файл с вакансиями пуст.")
 
         elif choice == "0":
             print("Выход...")
