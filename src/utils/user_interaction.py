@@ -17,7 +17,7 @@ def user_interaction():
         print("7 - Получить все вакансии из файла")
         print("0 - Выйти")
 
-        choice = input("Enter the action number: ")
+        choice = input("Введите номер действия: ")
 
         if choice == "1":
             vacancies = search_vacancy()
@@ -26,7 +26,7 @@ def user_interaction():
             if vacancies:
                 save_vacancies(vacancies)
             else:
-                print("You must first perform a vacancy search (action 1) before saving.")
+                print("Сначала вы должны выполнить поиск вакансий.")
 
         elif choice == "3":
             remove_vacancies(vacancies)
@@ -47,4 +47,4 @@ def user_interaction():
             print("Выход...")
             exit()
         else:
-            print("Wrong choice. Please select an existing option.")
+            print("Повторите ввод.")

@@ -36,8 +36,7 @@ class Vacancy:
             raise ValueError("Работодатель должен быть непустой строкой")
         if not isinstance(city, str):
             raise ValueError("Город должен быть непустой строкой")
-        if not isinstance(requirements, str):
-            raise ValueError("Требования должны быть непустой строкой")
+
 
         self.title = title
         self.vacancy_url = vacancy_url
@@ -45,8 +44,12 @@ class Vacancy:
         self.salary_to = salary_to
         self.employer = employer
         self.city = city
-        self.requirements = requirements
 
+
+        if isinstance(requirements, str):
+            self.requirements = requirements
+        else:
+            self.requirements = "Требования не указаны"
         if salary_from is None or salary_to is None:
             self.salary_comparison = 0
         else:
