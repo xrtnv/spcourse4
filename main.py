@@ -1,4 +1,4 @@
-"""The file to run the program. Click 'Run main' for start program"""
+"""Файл для запуска программы. Нажмите кнопку 'Run main' для запуска программы"""
 from src.utils.user_interaction import user_interaction
 
 if __name__ == "__main__":
