@@ -25,20 +25,20 @@ def search_vacancy():
 def save_vacancies(vacancies):
     """Функция сохранения вакансий в файл"""
 
-    json_save = JSONSaver(vacancies, f'../data/saved_vacancies/json_vacancies.json')
+    json_save = JSONSaver(vacancies, f'data/saved_vacancies/json_vacancies.json')
     json_save.save_to_file()
 
-    print(f'Файл был успешно сохранен по пути: ../data/saved_vacancies/')
+    print(f'Файл был успешно сохранен по пути: data/saved_vacancies/')
 
 
 def remove_vacancies(vacancies):
     """Функция удаления вакансии из файла"""
 
-    json_save = JSONSaver(vacancies, f'../data/saved_vacancies/json_vacancies.json')
+    json_save = JSONSaver(vacancies, f'data/saved_vacancies/json_vacancies.json')
 
     remove_vac = input('Введите точное название вакансии, которую нужно удалить: ')
 
-    if os.path.isfile("../data/saved_vacancies/json_vacancies.json"):
+    if os.path.isfile("data/saved_vacancies/json_vacancies.json"):
         json_save.delete_vacancy(remove_vac)
         print('Вакансия была успешно удалена из файла')
     else:
