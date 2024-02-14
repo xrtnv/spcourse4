@@ -28,7 +28,8 @@ def save_vacancies(vacancies):
     """Функция сохранения вакансий в файл"""
 
     if not os.path.isfile(save_path):
-        os.mkdir(save_path)
+        with open(save_path, "w+"):
+            print(f'Файл с вакансиями не был найден. Создан новый.')
 
     json_save = JSONSaver(vacancies, save_path)
     json_save.save_to_file()
