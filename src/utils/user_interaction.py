@@ -6,6 +6,8 @@ def user_interaction():
 
     vacancies = []
 
+    json_saver = JSONSaver(vacancies, 'data/saved_vacancies/json_vacancies.json')
+
     while True:
         print("Выберите действие:")
         print("1 - Поиск вакансии")
@@ -29,31 +31,31 @@ def user_interaction():
                 print("Сначала вы должны выполнить поиск вакансий.")
 
         elif choice == "3":
-            if len(JSONSaver().load_from_file()) > 0:
+            if len(json_saver.load_from_file()) > 0:
                 remove_vacancies(vacancies)
             else:
                 print("Файл с вакансиями пуст.")
 
         elif choice == "4":
-            if len(JSONSaver().load_from_file()) > 0:
+            if len(json_saver.load_from_file()) > 0:
                 get_vac_by_salary(vacancies)
             else:
                 print("Файл с вакансиями пуст.")
 
         elif choice == "5":
-            if len(JSONSaver().load_from_file()) > 0:
+            if len(json_saver.load_from_file()) > 0:
                 get_vac_by_city(vacancies)
             else:
                 print("Файл с вакансиями пуст.")
 
         elif choice == "6":
-            if len(JSONSaver().load_from_file()) > 0:
+            if len(json_saver.load_from_file()) > 0:
                 get_top_vac(vacancies)
             else:
                 print("Файл с вакансиями пуст.")
 
         elif choice == "7":
-            if len(JSONSaver().load_from_file()) > 0:
+            if len(json_saver.load_from_file()) > 0:
                 get_all_vacancies(vacancies)
             else:
                 print("Файл с вакансиями пуст.")
