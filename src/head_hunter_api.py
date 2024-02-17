@@ -6,7 +6,7 @@ from src.abstract_classes.general_api import GeneralAPI
 from src.vacancy import Vacancy
 
 
-class HeadHunterAPI(GeneralAPI, ABC):
+class HeadHunterAPI(GeneralAPI):
     """
     Реализация класса GeneralAPI для взаимодействия с API вакансий HeadHunter.
     """
